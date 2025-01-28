@@ -41,7 +41,7 @@ export default function HowItWorks() {
  
                 <div className="flex flex-col items-center gap-2">
                     <p className="text-7xl text-center">📝</p>
-                    <p className="text-center font-medium">Upload a Video</p>
+                    <p className="text-center font-medium">OutPut</p>
                 </div>
             </div>
         </section>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans as FontSans} from "next/font/google";
 import { cn } from "@/lib/utils";
 import Header from "@/components/home/header";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 
@@ -25,16 +26,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+       <ClerkProvider>
     <html lang="en">
       <body
        className={cn("min-h-screen bg-background font-sans antialiased",
         fontSans.variable
        )}>
       <Header></Header>
-    
+
       <main>{children}</main>
       </body>
-    </html>
+      </html>
+      </ClerkProvider>
+ 
+
   );
 }
 

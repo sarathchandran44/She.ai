@@ -1,6 +1,6 @@
 import { Ghost } from "lucide-react";
 import Link  from "next/link";
-
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 const NavLink = ({href,children}:{href:string, children:React.ReactNode;
 }) =>{
     return <Link href={href} className="transition-colors duration-200 text-gray-600 hover:text-purple-500">
@@ -20,16 +20,29 @@ return(
     </NavLink>
     </div>
     <div className="flex lg:jutify-center gap-2 lg:gap-12 lg:item-center">
-        <Link href="/#pricing">Pricing</Link>
-        <Link href="/#post">Your Post</Link>
+        <NavLink href="/#pricing">Pricing</NavLink>
+        <SignedIn>
+        <NavLink href="/#post">Your Post</NavLink>
+        </SignedIn>
     </div>
     <div className="flex lg:justify-end lg:flex-1">
+    <SignedIn>
     <div className="flex gap-2 items-center">
+
         <NavLink href="/dashboard">Upload a video
         </NavLink>
         {/**Profile */}
+
+            <UserButton />
+
     </div>
-    <Link href="/sign-in">Sign In</Link>
+    </SignedIn>
+    <SignedOut>
+            <SignInButton>    
+                <NavLink href="/sign-in">Sign In</NavLink>
+                </SignInButton>
+          </SignedOut>
+
     </div>
    </nav>
 )

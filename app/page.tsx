@@ -1,5 +1,4 @@
 import Banner from "@/components/home/banner";
-import Header from "@/components/home/header";
 import HowItWorks from "@/components/home/howitworks";
 import Pricing from "@/components/home/pricing";
 import { Dot } from "lucide-react";
@@ -9,6 +8,7 @@ export default function Home(){
   
     <main className="mx-auto w-full insert-0 h-full bg-[radial-gradient (#e5e7eb_px), transparent_1px)]
     [background-size:16px_16px">
+
      <Banner />
     <div className="flex items-center justify-center">
         <Dot className="text-purple-400">
@@ -37,7 +37,9 @@ export default function Home(){
           </Dot>
           </div>
           
-
+         <footer className="bg-gray-200/20 flex h-20 py-24 px-12 z-20 relative overflow-hidden flex-col gap-2">
+         <p>All Rights Reserved, {new Date().getFullYear()} </p>
+         <p>Built by a Ghost</p></footer>
     </main>
   )
 
